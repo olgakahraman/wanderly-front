@@ -7,7 +7,10 @@
   text-decoration: none;
   color: greenyellow;
   margin-right: 1rem;
+  background: none;
+  border: none;
 }
+
 .navLink i {
   color: greenyellow;
 }
