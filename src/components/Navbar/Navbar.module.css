@@ -1,0 +1,23 @@
+.navNavbar {
+  background: grey;
+  padding: 1rem;
+}
+
+.navLink {
+  text-decoration: none;
+  color: greenyellow;
+  margin-right: 1rem;
+}
+.navLink i {
+  color: greenyellow;
+}
+
+.navLink:hover i,
+.activeLink i {
+  color: lime !important;
+}
+
+.navLink:hover,
+.activeLink {
+  color: lime !important;
+}
