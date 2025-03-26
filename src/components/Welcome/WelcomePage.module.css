@@ -58,8 +58,7 @@
   font-weight: 600;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, background-color 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: all 200ms ease-in-out;
   background: linear-gradient(45deg, #ff105f, #ffad06);
   color: white;
 }

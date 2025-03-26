@@ -8,7 +8,7 @@ function WelcomePage() {
       <div className={`container-fluid ${styles.container}`}>
         <div className='row'>
           <div
-            className={`col-md-5 d-flex flex-column justify-content-center align-items-center ${styles.leftSection}`}
+            className={`col-md-6 d-flex flex-column justify-content-center align-items-center ${styles.leftSection}`}
           >
             <h1 className={styles.heading}>Wanderly</h1>
             <h3 className={styles.subHeading}>
@@ -17,11 +17,12 @@ function WelcomePage() {
             <button
               className={styles.button}
               aria-label='Get started with Wanderly'
+              onClick={() => navigate('/login')}
             >
               Get Started
             </button>
           </div>
-          <div className={`col-md-7 ${styles.rightSection}`}>
+          <div className={`col-md-6 ${styles.rightSection}`}>
             <img
               src='/images/wanderly-2.jpeg'
               alt='Traveling photos'
