@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import AuthForm from '../components/AuthForm/AuthForm';
+import { Link } from 'react-router-dom';
+import AuthForm from '../components/Auth/AuthForm';
 import styles from './AuthPage.module.css';
 
 const Registration = () => {
@@ -26,7 +26,7 @@ const Registration = () => {
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
           <h1 className={`mb-4 ${styles.heading}`}>Create Account</h1>
-          <AuthForm type='register'  />
+          <AuthForm type='register' />
           <p className={styles.link}>
             Already have an account? <Link to='/login'>Login</Link>
           </p>

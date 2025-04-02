@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import AuthForm from '../components/AuthForm/AuthForm.jsx';
+import { Link } from 'react-router-dom';
+import AuthForm from '../components/Auth/AuthForm.jsx';
 import styles from './AuthPage.module.css';
 
 const ForgotPassword = () => {

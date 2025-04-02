@@ -1,6 +1,6 @@
 import React from 'react';
-import AuthButton from '../AuthButton/AuthButton.jsx';
-import AuthInput from '../AuthInput/AuthInput.jsx';
+import AuthInput from './AuthInput.jsx';
+import AuthButton from './AuthButton.jsx';
 import styles from './AuthForm.module.css';
 
 const AuthForm = ({ type, onSubmit }) => {

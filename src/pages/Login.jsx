@@ -1,7 +1,7 @@
-import { Link, useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { motion } from 'framer-motion';
-import AuthForm from '../components/AuthForm/AuthForm';
+import { Link, useNavigate } from 'react-router-dom';
+import AuthForm from '../components/Auth/AuthForm';
 import { useAuth } from '../context/AuthContext';
 import styles from './AuthPage.module.css';
 
@@ -9,7 +9,7 @@ const Login = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = event => {
     event.preventDefault();
     login();
     navigate('/news-feed');
