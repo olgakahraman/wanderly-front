@@ -1,19 +1,9 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { motion } from 'framer-motion';
-import { Link, useNavigate } from 'react-router-dom';
-import AuthForm from '../components/Auth/AuthForm';
 import { useAuth } from '../context/AuthContext';
 import styles from './AuthPage.module.css';
 
 const Login = () => {
-  const navigate = useNavigate();
-  const { login } = useAuth();
-
-  const handleSubmit = event => {
-    event.preventDefault();
-    login();
-    navigate('/news-feed');
-  };
+  const { loginWithGoogle, loginWithApple } = useAuth();
 
   return (
     <div className={`container-fluid ${styles.authContainer}`}>
@@ -37,13 +27,22 @@ const Login = () => {
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
           <h1 className={`mb-4 ${styles.heading}`}>Login</h1>
-          <AuthForm type='login' onSubmit={handleSubmit} />
-          <p className={styles.link}>
-            <Link to='/forgot-password'>Forgot password?</Link>
-          </p>
-          <p className={styles.link}>
-            New here? <Link to='/registration'>Join now</Link>
-          </p>
+          <button className={styles.oauthButton} onClick={loginWithGoogle}>
+            <img
+              src='/icons/google.svg'
+              alt='Google icon'
+              className={styles.icon}
+            />
+            Continue with Google
+          </button>
+          <button className={styles.oauthButton} onClick={loginWithApple}>
+            <img
+              src='/icons/apple.svg'
+              alt='Apple icon'
+              className={styles.icon}
+            />
+            Continue with Apple
+          </button>
         </motion.div>
       </div>
     </div>
