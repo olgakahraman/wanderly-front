@@ -1,20 +1,9 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { motion } from 'framer-motion';
-import { Link, useNavigate } from 'react-router-dom';
-import AuthForm from '../components/Auth/AuthForm';
-import { useAuth } from '../context/AuthContext';
+import { Link } from 'react-router-dom';
+import AuthForm from '../components/Auth/AuthForm.jsx';
 import styles from './AuthPage.module.css';
 
-const Login = () => {
-  const navigate = useNavigate();
-  const { login } = useAuth();
-
-  const handleSubmit = event => {
-    event.preventDefault();
-    login();
-    navigate('/news-feed');
-  };
-
+const ForgotPassword = () => {
   return (
     <div className={`container-fluid ${styles.authContainer}`}>
       <div className='row'>
@@ -26,7 +15,7 @@ const Login = () => {
         >
           <img
             src='/images/wanderly-2.jpeg'
-            alt='Traveling photos'
+            alt='Traveling inspiration'
             className={styles.image}
           />
         </motion.div>
@@ -36,13 +25,10 @@ const Login = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          <h1 className={`mb-4 ${styles.heading}`}>Login</h1>
-          <AuthForm type='login' onSubmit={handleSubmit} />
+          <h1 className={`mb-4 ${styles.heading}`}>Password Rescue Mission!</h1>
+          <AuthForm type='forgot-password' />
           <p className={styles.link}>
-            <Link to='/forgot-password'>Forgot password?</Link>
-          </p>
-          <p className={styles.link}>
-            New here? <Link to='/registration'>Join now</Link>
+            Remember your password? <Link to='/login'>Jump In</Link>
           </p>
         </motion.div>
       </div>
@@ -50,4 +36,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default ForgotPassword;

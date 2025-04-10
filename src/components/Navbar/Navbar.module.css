@@ -1,18 +1,18 @@
 .navNavbar {
-  background: grey;
+  background: none;
   padding: 1rem;
 }
 
 .navLink {
   text-decoration: none;
-  color: greenyellow;
-  margin-right: 1rem;
+  color: #ff2d6d;
   background: none;
   border: none;
 }
 
 .navLink i {
-  color: greenyellow;
+  color: #ff2d6d;
+  font-size: 1.3em;
 }
 
 .navLink:hover i,

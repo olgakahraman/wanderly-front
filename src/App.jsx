@@ -12,37 +12,20 @@ function App() {
   return (
     <AuthProvider>
       <Navbar />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/welcome' element={<WelcomePage />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/registration' element={<Registration />} />
-        <Route path='/forgot-password' element={<ForgotPassword />} />
-        <Route
-          path='/create-post'
-          element={
-            <ProtectedRoute>
-              <CreatePost />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path='/profile'
-          element={
-            <ProtectedRoute>
-              <Profile />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path='/news-feed'
-          element={
-            <ProtectedRoute>
-              <NewsFeed />
-            </ProtectedRoute>
-          }
-        />
-      </Routes>
+      <Suspense fallback={<div className='loading'>Loading...</div>}>
+        <Routes>
+          {publicRoutes.map(({ path, element }) => (
+            <Route key={path} path={path} element={element} />
+          ))}
+          {privateRoutes.map(({ path, element }) => (
+            <Route
+              key={path}
+              path={path}
+              element={<ProtectedRoute>{element}</ProtectedRoute>}
+            />
+          ))}
+        </Routes>
+      </Suspense>
     </AuthProvider>
   );
 }
