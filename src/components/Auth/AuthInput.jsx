@@ -1,14 +1,17 @@
 import React from 'react';
 import styles from './AuthInput.module.css';
 
-const AuthInput = ({ name, type, placeholder }) => {
+const AuthInput = ({ name, type, placeholder, register, error }) => {
   return (
-    <input
-      className={styles.input}
-      name={name}
-      type={type}
-      placeholder={placeholder}
-    />
+    <div className={styles.inputWrapper}>
+      <input
+        className={`${styles.input} ${error ? styles.inputError : ''}`}
+        {...register(name)}
+        type={type}
+        placeholder={placeholder}
+      />
+      {error && <p className={styles.errorText}>{error}</p>}
+    </div>
   );
 };
 

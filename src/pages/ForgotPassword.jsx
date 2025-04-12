@@ -4,6 +4,11 @@ import AuthForm from '../components/Auth/AuthForm.jsx';
 import styles from './AuthPage.module.css';
 
 const ForgotPassword = () => {
+  const handleSubmit = ({ email }) => {
+    console.log('Reset password for ==>', email);
+    alert('If this email exists, reset instructions will be sent.');
+  };
+
   return (
     <div className={`container-fluid ${styles.authContainer}`}>
       <div className='row'>
@@ -26,7 +31,7 @@ const ForgotPassword = () => {
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
           <h1 className={`mb-4 ${styles.heading}`}>Password Rescue Mission!</h1>
-          <AuthForm type='forgot-password' />
+          <AuthForm type='forgot-password' onSubmit={handleSubmit} />
           <p className={styles.link}>
             Remember your password? <Link to='/login'>Jump In</Link>
           </p>

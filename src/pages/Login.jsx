@@ -9,8 +9,8 @@ const Login = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
 
-  const handleSubmit = event => {
-    event.preventDefault();
+  const handleSubmit = ({ email, password }) => {
+    console.log('Login ==>', email, password);
     login();
     navigate('/news-feed');
   };

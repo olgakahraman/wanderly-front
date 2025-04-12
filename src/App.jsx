@@ -1,10 +1,10 @@
-import { Route, Routes } from 'react-router-dom';
 import { Suspense } from 'react';
-import { AuthProvider } from './context/AuthContext.jsx';
-import ProtectedRoute from './ProtectedRoute.jsx';
+import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar.jsx';
-import publicRoutes from './routes/publicRoutes.jsx';
-import privateRoutes from './routes/privateRoutes.jsx';
+import { AuthProvider } from './context/AuthContext.jsx';
+import PrivateRoutes from './routes/PrivateRoutes.jsx';
+import ProtectedRoute from './routes/ProtectedRoute.jsx';
+import PublicRoutes from './routes/PublicRoutes.jsx';
 
 import './App.css';
 
@@ -14,10 +14,10 @@ function App() {
       <Navbar />
       <Suspense fallback={<div className='loading'>Loading...</div>}>
         <Routes>
-          {publicRoutes.map(({ path, element }) => (
+          {PublicRoutes.map(({ path, element }) => (
             <Route key={path} path={path} element={element} />
           ))}
-          {privateRoutes.map(({ path, element }) => (
+          {PrivateRoutes.map(({ path, element }) => (
             <Route
               key={path}
               path={path}

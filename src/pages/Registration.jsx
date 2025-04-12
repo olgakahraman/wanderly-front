@@ -1,9 +1,18 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import AuthForm from '../components/Auth/AuthForm';
 import styles from './AuthPage.module.css';
 
 const Registration = () => {
+  const navigate = useNavigate();
+  const { login } = useAuth();
+
+  const handleSubmit = ({ email, password }) => {
+    console.log('Register ==>', email, password);
+    login();
+    navigate('/news-feed');
+  };
+
   return (
     <div className={`container-fluid ${styles.authContainer}`}>
       <div className='row'>
@@ -26,7 +35,7 @@ const Registration = () => {
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
           <h1 className={`mb-4 ${styles.heading}`}>Create Account</h1>
-          <AuthForm type='register' />
+          <AuthForm type='register' onSubmit={handleSubmit} />
           <p className={styles.link}>
             Already have an account? <Link to='/login'>Login</Link>
           </p>
