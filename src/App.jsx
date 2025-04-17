@@ -9,6 +9,8 @@ import PublicRoutes from './routes/PublicRoutes.jsx';
 import './App.css';
 
 function App() {
+  console.log('PublicRoutes:', PublicRoutes);
+  console.log('PrivateRoutes:', PrivateRoutes);
   return (
     <AuthProvider>
       <Navbar />
